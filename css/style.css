@@ -39,3 +39,7 @@ header {
 .windowDetail__icon {
     width: 100PX;
 }
+
+.img-nopoint {
+    pointer-events: none;
+}

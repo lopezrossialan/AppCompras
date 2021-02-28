@@ -11,7 +11,7 @@ let guardar = document.getElementById('windowLoadAdd').addEventListener('click',
     document.getElementById('windowLoadProduct').value = ""
     document.getElementById('windowLoadIcon').value = ""
     document.getElementById('windowLoadInfo').value = ""
-    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icono="${icono}"  data-info="${info}"> <img src="${icono}" alt="${producto}" class="windowList__icon"> ${producto}</li> `
+    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icono="${icono}"  data-info="${info}"> <img class="img-nopoint" src="${icono}" alt="${producto}" class="windowList__icon"> ${producto}</li> `
     console.log("hola", producto, icono, info, windowLoadList)
     windowLoadList.innerHTML += modelo
     windowLoad.hide()
@@ -21,7 +21,7 @@ let guardar = document.getElementById('windowLoadAdd').addEventListener('click',
 
 let windowLoadListClick = document.getElementById('windowLoadList').addEventListener('click', function(e) {
     document.getElementById('windowDetailProduct').innerHTML = e.target.getAttribute('data-producto')
-    document.getElementById('windowDetail__icon').src = e.target.getAttribute('data-icon')
+    document.getElementById('windowDetail__icon').src = e.target.getAttribute('data-icono')
     document.getElementById('windowDetailInfo').innerHTML = e.target.getAttribute('data-info')
     windowList.style.display = 'none'
     windowDetail.style.display = 'block'
@@ -33,6 +33,3 @@ let windowDetaiLClose = document.getElementById('windowDetailClose').addEventLis
     windowDetail.style.display = 'none'
 
 })
-
-
-// let test = 0
