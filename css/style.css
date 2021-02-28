@@ -1,0 +1,41 @@
+#windowDetail,
+#windowEmpty {
+    display: none;
+}
+
+#load_boton {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50%;
+}
+
+header {
+    background: #818bca;
+    height: 85px;
+}
+
+#windowEmpty {
+    text-align: center;
+    padding: 50px;
+}
+
+.windowEmpty__emoji {
+    font-size: 250px;
+}
+
+.windowList__icon {
+    width: 40px;
+    margin-right: 6px;
+}
+
+#windowDetail {
+    padding: 40px;
+    text-align: center;
+}
+
+.windowDetail__icon {
+    width: 100PX;
+}
