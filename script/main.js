@@ -3,16 +3,21 @@ let windowEmpty = document.getElementById('windowEmpty')
 let windowLoadList = document.getElementById('windowLoadList')
 let windowList = document.getElementById('windowList')
 let windowDetail = document.getElementById('windowDetail')
+let windowLoadIcon = document.getElementById('windowLoadIcon')
+let windowLoadProduct = document.getElementById('windowLoadProduct')
+let windowLoadInfo = document.getElementById('windowLoadInfo')
+let windowDetailProduct = document.getElementById('windowDetailProduct')
+let windowDetail__icon = document.getElementById('windowDetail__icon')
+let windowDetailInfo = document.getElementById('windowDetailInfo')
 
 let guardar = document.getElementById('windowLoadAdd').addEventListener('click', function() {
-    let producto = document.getElementById('windowLoadProduct').value
-    let icono = document.getElementById('windowLoadIcon').value
-    let info = document.getElementById('windowLoadInfo').value
-    document.getElementById('windowLoadProduct').value = ""
-    document.getElementById('windowLoadIcon').value = ""
-    document.getElementById('windowLoadInfo').value = ""
-    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icono="${icono}"  data-info="${info}"> <img class="img-nopoint" src="${icono}" alt="${producto}" class="windowList__icon"> ${producto}</li> `
-    console.log("hola", producto, icono, info, windowLoadList)
+    let producto = windowLoadProduct.value
+    let icono = windowLoadIcon.value
+    let info = windowLoadInfo.value
+    windowLoadProduct.value = ""
+    windowLoadIcon.value = ""
+    windowLoadInfo.value = ""
+    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icon="${icono}"  data-info="${info}"> <img class="img_nopoint" src="${icono}" alt="${producto}" class="windowList__icon"> ${producto}</li> `
     windowLoadList.innerHTML += modelo
     windowLoad.hide()
     windowEmpty.style.display = 'none'
@@ -20,9 +25,9 @@ let guardar = document.getElementById('windowLoadAdd').addEventListener('click',
 })
 
 let windowLoadListClick = document.getElementById('windowLoadList').addEventListener('click', function(e) {
-    document.getElementById('windowDetailProduct').innerHTML = e.target.getAttribute('data-producto')
-    document.getElementById('windowDetail__icon').src = e.target.getAttribute('data-icono')
-    document.getElementById('windowDetailInfo').innerHTML = e.target.getAttribute('data-info')
+    windowDetailProduct.innerHTML = e.target.getAttribute('data-producto')
+    windowDetail__icon.src = e.target.getAttribute('data-icon')
+    windowDetailInfo.innerHTML = e.target.getAttribute('data-info')
     windowList.style.display = 'none'
     windowDetail.style.display = 'block'
 

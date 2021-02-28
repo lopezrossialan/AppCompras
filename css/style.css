@@ -1,5 +1,5 @@
 #windowDetail,
-#windowEmpty {
+#windowLoad {
     display: none;
 }
 
@@ -13,8 +13,16 @@
 }
 
 header {
-    background: #818bca;
+    background: #616161;
     height: 85px;
+}
+
+header p {
+    color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 }
 
 #windowEmpty {
@@ -37,9 +45,9 @@ header {
 }
 
 .windowDetail__icon {
-    width: 100PX;
+    width: 100px;
 }
 
-.img-nopoint {
+.img_nopoint {
     pointer-events: none;
 }
