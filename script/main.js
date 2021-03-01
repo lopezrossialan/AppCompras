@@ -10,19 +10,48 @@ let windowDetailProduct = document.getElementById('windowDetailProduct')
 let windowDetail__icon = document.getElementById('windowDetail__icon')
 let windowDetailInfo = document.getElementById('windowDetailInfo')
 
+let arrayList = []
+
+
+
 let guardar = document.getElementById('windowLoadAdd').addEventListener('click', function() {
     let producto = windowLoadProduct.value
     let icono = windowLoadIcon.value
     let info = windowLoadInfo.value
+
+
+    function idObject() {
+        if (arrayList.length == 0) {
+            return 1
+        } else {
+            return arrayList.length + 1
+        }
+    }
+
+    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icon="${icono}"  data-info="${info}" id=${idObject()}> <img class="img_nopoint" src="${icono}" alt="${producto}"> ${producto}   </li> `
+    windowLoadList.innerHTML += modelo
+    if (producto === "" || icono === "" || info === "") {
+        return
+    }
+    let object = {
+        id: idObject(),
+        product: `${producto}`,
+        imgage: `${icono}`,
+        informacion: `${info}`,
+    }
+    arrayList.push(object)
+
     windowLoadProduct.value = ""
     windowLoadIcon.value = ""
     windowLoadInfo.value = ""
-    let modelo = ` <li class="list-group-item" data-producto="${producto}" data-icon="${icono}"  data-info="${info}"> <img class="img_nopoint" src="${icono}" alt="${producto}" class="windowList__icon"> ${producto}</li> `
-    windowLoadList.innerHTML += modelo
     windowLoad.hide()
     windowEmpty.style.display = 'none'
     windowList.style.display = 'block'
+
+
 })
+
+
 
 let windowLoadListClick = document.getElementById('windowLoadList').addEventListener('click', function(e) {
     windowDetailProduct.innerHTML = e.target.getAttribute('data-producto')
@@ -31,6 +60,15 @@ let windowLoadListClick = document.getElementById('windowLoadList').addEventList
     windowList.style.display = 'none'
     windowDetail.style.display = 'block'
 
+})
+
+let borrado = document.getElementById('btnBorrar')
+
+borrado.addEventListener('click', (e) => {
+    arrayList.filter(item => {
+        return item.id != e.target.id
+    })
+    console.log(e.target.parentNode);
 })
 
 let windowDetaiLClose = document.getElementById('windowDetailClose').addEventListener('click', () => {

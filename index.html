@@ -23,7 +23,7 @@
 
     <section id="windowEmpty">
         <h1 class="windowEmpty__title"> Aun no tienes productos para comprar</h1>
-        <h1 class="windowEmpty__emoji">😟</h1>
+        <h1 class="windowEmpty__emoji"><img src="/image/sad.png" alt=""></h1>
     </section>
 
     <section id="windowList">
@@ -36,6 +36,7 @@
         <img src="" alt="" class="windowDetail__icon" id="windowDetail__icon">
         <h1 id="windowDetailProduct"></h1>
         <p id="windowDetailInfo"></p>
+        <button id="btnBorrar">Eliminar</button>
         <button id="windowDetailClose">Cerrar</button>
     </section>
 
@@ -60,7 +61,7 @@
                     <div class="mb-3">
                         <label for="windowLoadIcon" class="form-label">Selecciona Categoria </label>
                         <select id="windowLoadIcon" class="form-select">
-                            <option value="/image/varios.svg">Varios</option>
+                            <option value="/image/varios.png">Varios</option>
                             <option value="/image/milk.png">Lacteos</option>
                             <option value="/image/meat.png">Carnes</option>
                         </select>
@@ -72,8 +73,9 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="windowLoadAdd">Agregar</button>
+                        <button type="button" class="btn btn-primary" class="btnstyle" id="windowLoadAdd">Agregar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" class="btnstyle">Cerrar</button>
+
                     </div>
 
                 </div>
